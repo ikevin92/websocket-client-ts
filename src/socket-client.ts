@@ -3,8 +3,10 @@ import { Manager, Socket } from 'socket.io-client';
 let socket: Socket;
 
 export const connectToServer = (token: string) => {
+  const url = 'https://teslo-nest-ikevin92.herokuapp.com/socket.io/socket.io.js';
+  // const url = 'http://localhost:3000/socket.io/socket.io.js';
 
-  const manager = new Manager('http://localhost:3000/socket.io/socket.io.js', {
+  const manager = new Manager(url, {
     extraHeaders: {
       authentication: token
     }
